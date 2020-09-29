@@ -1,10 +1,15 @@
 package kr.ac.hansung.cse;
 
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-@AllArgsConstructor
+//import lombok.AllArgsConstructor;
+
+//@AllArgsConstructor
 public class PetOwner {
-	private AnimalType animal;
+	@Autowired//wiring by type
+	@Qualifier(value="qf_dog")
+	private AnimalType animal; //animal type bean 2개
 
 	public void play() {
 		animal.sound();
